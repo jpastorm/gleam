@@ -7,9 +7,9 @@ import (
 	"github.com/charmbracelet/huh/spinner"
 	"github.com/charmbracelet/lipgloss"
 	"github.com/charmbracelet/log"
-	xgithub "github.com/jpastorm/secure-git-clone/github"
-	"github.com/jpastorm/secure-git-clone/models"
-	"github.com/jpastorm/secure-git-clone/storage"
+	xgithub "github.com/jpastorm/gleam/github"
+	"github.com/jpastorm/gleam/models"
+	"github.com/jpastorm/gleam/storage"
 	"os"
 	"strings"
 )

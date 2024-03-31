@@ -5,7 +5,7 @@ import (
 	"crypto/cipher"
 	"crypto/rand"
 	"encoding/json"
-	"github.com/jpastorm/secure-git-clone/models"
+	"github.com/jpastorm/gleam/models"
 	"io/ioutil"
 	"os"
 	"os/user"
