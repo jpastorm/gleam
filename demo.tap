@@ -1,0 +1,33 @@
+Output demo.gif
+
+Set Height 700
+Set Width 1000
+
+Hide
+Type "go build -o demo ." Enter
+Ctrl+L
+Sleep 1s
+
+Type "clear && ./demo -r"
+Sleep 500ms
+Enter
+Sleep 500ms
+
+Show
+
+Sleep 1s
+Type "n"
+Sleep 1s
+Sleep 500ms Enter
+Type "jpastorm"
+Sleep 500ms Enter
+Left
+Sleep 2s Enter
+Space
+Sleep 2s Enter
+
+Sleep 5s
+
+Hide
+Type "rm demo" Enter
+Sleep 1s
