@@ -1,7 +1,7 @@
 Output demo.gif
 
 Set Height 700
-Set Width 1000
+Set Width 1300
 
 Hide
 Type "go build -o demo ." Enter
