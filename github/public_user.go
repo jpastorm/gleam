@@ -30,7 +30,7 @@ func (p PublicUser) ListRepositories() ([]string, error) {
 	}
 
 	var repos []struct {
-		URL string `json:"ssh_url"`
+		URL string `json:"clone_url"`
 	}
 	if err := json.Unmarshal(out, &repos); err != nil {
 		return nil, err

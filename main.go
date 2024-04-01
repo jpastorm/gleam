@@ -196,7 +196,7 @@ func main() {
 		return lipgloss.NewStyle().Foreground(lipgloss.Color("212")).Render(s)
 	}
 	fmt.Fprintf(&sb,
-		"%s\n\n %s",
+		"%s\n\n%s",
 		lipgloss.NewStyle().Bold(true).Render("REPOSITORIES DOWNLOADED"),
 		keyword(EnumerateList(Repositories)),
 	)

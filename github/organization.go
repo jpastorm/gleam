@@ -32,7 +32,7 @@ func (o Organization) ListRepositories() ([]string, error) {
 	}
 
 	var repos []struct {
-		URL string `json:"ssh_url"`
+		URL string `json:"clone_url"`
 	}
 
 	if err := json.Unmarshal(out, &repos); err != nil {
@@ -49,16 +49,16 @@ func (o Organization) ListRepositories() ([]string, error) {
 
 func (o Organization) CloneRepositories(repoURLs []string) error {
 	for _, repoURL := range repoURLs {
-		err := os.RemoveAll(getRepoName(repoURL))
+		repoName := getRepoName(repoURL)
+
+		err := os.RemoveAll(repoName)
 		if err != nil {
 			return err
 		}
 
-		gitCmd := fmt.Sprintf("git clone %s", repoURL)
+		authURL := fmt.Sprintf("https://%s:%s@%s", o.Org, o.Token, strings.TrimPrefix(repoURL, "https://"))
 
-		cmd := exec.Command("bash", "-c", gitCmd)
-
-		cmd.Env = append(cmd.Env, fmt.Sprintf("GITHUB_TOKEN=%s", o.Token))
+		cmd := exec.Command("git", "clone", authURL)
 
 		if err := cmd.Run(); err != nil {
 			return err
